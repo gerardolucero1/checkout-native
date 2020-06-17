@@ -5,7 +5,10 @@
 </template>
 
 <script>
-import Rooms from './Rooms.vue'
+import View from './Evidence.vue'
+
+//LOGIN
+import Login from './user/Login.vue'
 
 export default{
     name: 'Inicio',
@@ -18,7 +21,12 @@ export default{
 
     methods: {
         ir(){
-            this.$navigateTo(Rooms)
+            this.$navigateTo(Login, {
+                animated: true,
+                transition: {
+                    name: 'fade',
+                },
+            })
         }
     }
 }

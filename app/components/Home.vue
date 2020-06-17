@@ -37,7 +37,7 @@
                 </FlexboxLayout>
 
                 <FlexboxLayout justifyContent="center" marginTop="20" alignItems="center">
-                	<Button width="150" borderRadius="20" backgroundColor="#18304C" color="white" text="Iniciar" />
+                	<Button width="150" borderRadius="20" backgroundColor="#18304C" color="white" text="Iniciar" @tap="goToRooms" />
                 </FlexboxLayout>
             </StackLayout>
         </GridLayout>
@@ -45,19 +45,27 @@
 </template>
 
 <script>
+//PAGES
+import Rooms from './Rooms.vue'
 
 export default{
     name: 'Home',
 
     data(){
         return{
-            email: '',
-            password: '',
+            
         }
     },
 
     methods: {
-        
+        goToRooms(){
+            this.$navigateTo(Rooms, {
+                animated: true,
+                transition: {
+                    name: 'fade',
+                },
+            })
+        }
     }
 }
 </script>
