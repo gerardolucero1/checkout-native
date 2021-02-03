@@ -276,10 +276,7 @@ module.exports = env => {
             new webpack.DefinePlugin({
                 "global.TNS_WEBPACK": "true",
                 "TNS_ENV": JSON.stringify(mode),
-                "process": "global.process",
-                HTMLElement: function() {
-                    return false;
-                },
+                "process": "global.process"
             }),
             // Remove all files from the out dir.
             new CleanWebpackPlugin(itemsToClean, { verbose: !!verbose }),
